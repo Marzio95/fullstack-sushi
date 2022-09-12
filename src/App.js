@@ -32,6 +32,13 @@ class App extends Component {
     this.setState({cards : updateCards});
   }
 
+  handleDecrement = cardID => {
+    const updateCards = [...this.state.cards];
+    const myCard = updateCards.find(card => card.id === cardID);
+    myCard.quantità--;
+    this.setState({cards : updateCards});
+  }
+
   render() {
     return (
       <>
@@ -41,7 +48,7 @@ class App extends Component {
           <hr />
           <div className='row'>
             {this.state.cards.map(card => (
-              <Card key={card.id} id={card.id} nome={card.nome} prezzo={card.prezzo} immagine={card.immagine} onDelete={this.handleDelete} onIncrement={this.handleIncrement} quantità={card.quantità} />
+              <Card key={card.id} id={card.id} nome={card.nome} prezzo={card.prezzo} immagine={card.immagine} onDelete={this.handleDelete} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} quantità={card.quantità} />
             ))}
           </div>
         </div>
