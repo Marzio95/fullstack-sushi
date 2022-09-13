@@ -46,7 +46,7 @@ class App extends Component {
   handleDecrement = cardID => {
     const updateCards = [...this.state.cards];
     const myCard = updateCards.find(card => card.id === cardID);
-    myCard.quantità--;
+    myCard.quantità === 0 ? myCard.quantità = 0 : myCard.quantità--;
     this.setState({cards : updateCards});
   }
 
