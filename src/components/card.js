@@ -12,7 +12,8 @@ class Card extends Component {
                     <img src={this.props.immagine} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{this.props.nome} Roll</h5>
-                        <p className="card-text">€{this.props.prezzo}</p>
+                        <p className="card-text">Prezzo prodotto €{this.props.prezzo}</p>
+                        <p className="card-text">Prezzo totale €{this.props.totale}</p>
                         <button onClick={() => this.props.onDelete(this.props.id)} className="btn btn-outline-danger">Elimina</button>
                     </div>
                 </div>
